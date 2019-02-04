@@ -1,0 +1,76 @@
+<!--
+| LEGOPROJEKT INDEXSIDA									|
+| PROJEKTARBETE I ELEKTRONISK PUBLICERING TNMK30 2016	|
+|														|
+| GRUPP 11												|
+| ADAM MORÉN: adamo472									|
+| EMIL MAIORANA: emima732								|
+| EBBA NILSSON: ebbni997								|
+| SAMUEL SVENSSON: samsv787								|
+                                                      -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset ="utf-8">
+		<title>AESE LEGO SEARCH</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dosis">
+		<script src="aeselego.js"></script>
+	</head>
+	
+	<body onload="GetNone()">
+		<div id="wrapperindex">
+			<div class="soka">
+			
+				<img id="logga" src="Legobit.png" alt="Legobit">
+				
+				<h1> AESE LEGO SEARCH</h1> 
+				
+				<!-- Search Function -->
+				<form action="Parts.php" method="GET">
+					<input required type="text" id="search" autocomplete="off" name="mySearch" placeholder="Search for Part ID or Part Name..." onfocus="this.placeholder = ''"/> <br>
+					<ul>
+						<li>
+							<input type="radio" id="searchID" name="specSearch" value="parts.PartID" checked="checked">
+							<label for="searchID">Search by ID</label>
+						
+							<div class="check"><div class="inside"></div></div>
+						</li>	  
+						<li>
+							<input type="radio" id="searchName" name="specSearch" value="parts.Partname">
+							<label for="searchName">Search by Name</label>					
+							<div class="check"><div class="inside"></div></div>
+						</li>	 
+					</ul>
+				</form>	
+			</div>
+	
+			<!-- Page info / footer -->
+			<div id="footer"> 
+				Welcome to AESE LEGO SEARCH! <br>
+				Here you can search for a specific lego part <br> 
+				and find out in which lego sets your part belongs to. <br>
+				Remember to choose if you want to search by ID or by name! 
+			</div>
+		</div>
+	 
+		<!-- Popup help about search -->
+		<div id="clickMe">
+			<a href="#" onclick="Help('popup');"> ? </a>
+		</div>
+		
+		<div id="popup">
+			<p id="hjalprubrik"> How to search: </p>
+			<p id="hjalptext"> 
+				<b>Part ID:</b> Type the correct ID of your part. For example: "3004", "2340" or "3005" <br>
+				<b>Part Name:</b> Type the name of the part you want to find. For example "Brick 2 x 2", "Star Wars" or "Police" <br>
+				Try it yourself!
+			</p>
+		</div>	
+		
+		<!-- Javascript snowflakes -->
+		<canvas id="canvas"></canvas>
+
+	</body>
+</html>
